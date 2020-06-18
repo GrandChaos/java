@@ -1,5 +1,6 @@
 package ru.sbrf.jc.demo;
 
+//Фибоначчи
 public class Main {
     public static int fib(int n){
         if (n <= 2) return 1;
