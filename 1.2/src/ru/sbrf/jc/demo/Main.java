@@ -1,5 +1,6 @@
 package ru.sbrf.jc.demo;
 
+//Быстрая сортировка
 public class Main {
     public static int arrLen = 20;
     public static int arr[] = new int[arrLen];
