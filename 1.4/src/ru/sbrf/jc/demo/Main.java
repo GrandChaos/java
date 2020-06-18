@@ -1,5 +1,6 @@
 package ru.sbrf.jc.demo;
 
+//Макс, Мин и Среднее
 public class Main {
 
     public static void main(String[] args) {
