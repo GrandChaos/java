@@ -2,6 +2,7 @@ package ru.sbrf.jc.demo;
 
 import java.util.Scanner;
 
+//Загадка
 public class Main {
 
     public static void main(String[] args) {
