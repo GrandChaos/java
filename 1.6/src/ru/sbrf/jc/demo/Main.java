@@ -1,5 +1,6 @@
 package ru.sbrf.jc.demo;
 
+//Звёздочки
 public class Main {
 
     public static void main(String[] args) {
