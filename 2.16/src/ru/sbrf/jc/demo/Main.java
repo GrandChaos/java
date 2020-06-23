@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
         int res = 0;
-	    for (int i = 1; i <= 50000; i++){
+	for (int i = 1; i <= 50000; i++){
             if (check(i)){
                 res++;
 //                System.out.print(i + " ");
