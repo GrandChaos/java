@@ -11,10 +11,10 @@ public class Main {
 	    boolean win = false;
 	    do {
 	        System.out.println("Input letter: ");
-		    Scanner in = new Scanner(System.in);
-		    String answer = in.nextLine();
-		    char ch = answer.charAt(0);
-		    for (int i = 0; i < letters.length; i++){
+			Scanner in = new Scanner(System.in);
+			String answer = in.nextLine();
+			char ch = answer.charAt(0);
+			for (int i = 0; i < letters.length; i++){
 				if (ch == letters[i]){
 					if (i == num) {
 						System.out.println("Right");
