@@ -1,13 +1,13 @@
 package ru.sbrf.jc.demo;
 
-public class LList {
-    Node root = null;
+public class LList<T> {
+    Node<T>root = null;
 
-    public void add(Object item){
-        Node tempNode = new Node(item);
-        Node lastNode = findLast();
+    public void add(T item){
+        Node<T> tempNode = new Node<>(item);
+        Node<T> lastNode = findLast();
 
-        if (lastNode != null){
+        if (lastNode!= null){
             lastNode.setNext(tempNode);
         }
         else {
@@ -15,12 +15,12 @@ public class LList {
         }
     }
 
-    private Node findLast(){
+    private Node<T> findLast(){
         if (root == null){
             return null;
         }
         else {
-           Node current = root;
+           Node<T>current = root;
            while (current.getNext() != null){
                current = current.getNext();
            }
@@ -28,15 +28,14 @@ public class LList {
         }
     }
 
-    public Object get(int id){
-        if (root == null){
-            return null;
-        }
+    public T get(int id) throws LListException{
+        if (id < 0) throw new LListException("Index Cannot Be Less Than 0");
+        else if (root == null) throw new LListException("List Is Empty");
         else {
-            Node current = root;
+            Node<T> current = root;
             int curId = 0;
             while (curId < id) {
-                if (current.getNext() == null) return null;
+                if (current.getNext() == null) throw new LListException("Index " + id + " Out Of Range " + size());
                 current = current.getNext();
                 curId++;
             }
@@ -49,7 +48,7 @@ public class LList {
             return 0;
         }
         else {
-            Node current = root;
+            Node<T>current = root;
             int size = 1;
             while (current.getNext() != null){
                 current = current.getNext();
@@ -60,23 +59,30 @@ public class LList {
     }
 }
 
-class Node{
-    private Object data;
-    private Node next = null;
+class LListException extends RuntimeException {
 
-    public Node(Object data){
+    public LListException(String message){
+        super(message);
+    }
+}
+
+class Node<T> {
+    private T data;
+    private Node<T> next = null;
+
+    public Node(T data){
         this.data = data;
     }
 
-    public Object getData(){
+    public T getData(){
         return data;
     }
 
-    public Node getNext(){
+    public Node<T> getNext(){
         return next;
     }
 
-    public void setNext(Node next){
+    public void setNext(Node<T> next){
         this.next = next;
     }
 }
